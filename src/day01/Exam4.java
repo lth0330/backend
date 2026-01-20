@@ -13,7 +13,7 @@ public class Exam4 {
         // * 시스템 입력 객체를 Scanner 객체에 대입하여 Scanner 객체 생성
         // * Scanner 변수명  = new Scanner(System.in);
         Scanner 입력변수  = new Scanner(System.in);
-        [1]
+
         // [2] 입력함수
         // 1. 입력객체변수.next();    : 입력받은 자료들을 문자열(String)로 변환
         입력변수.next();     // console.log 에서 키보드로부터 입력받고 enter입력시 입력종료
