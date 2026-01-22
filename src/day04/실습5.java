@@ -182,12 +182,11 @@ Scanner로 메뉴 번호를 입력받습니다.
 ---------------------------------
 선택> 4
 프로그램을 종료합니다. */
-
+        int balance =0;
     while (true){
         System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
         System.out.print("선택 >");
         int number = scan5.nextInt();
-        int balance =0;
         if(number==1){
             System.out.println("입금액 : ");
             int input = scan5.nextInt();
