@@ -8,6 +8,9 @@ public class 실습4 {
 
         Scanner scan4  = new Scanner(System.in);
 
+        double d0 = scan4.nextDouble();
+        System.out.println(d0);
+
         System.out.println("1. int 정수 2개 입력");
         int i1 = scan4.nextInt();
         int i2 = scan4.nextInt();
@@ -187,5 +190,15 @@ public class 실습4 {
         int i11 = scan4.nextInt();
 
 
+        System.out.println(" 정수 3개 입력"); // 스왑 : 두 변수간의 자료 교환, int temp = data1;  data1 =data2; data2  = temp;
+        //{안에서 선언된 변수는 지역변수 특징을 갖는다.}
+        int data1 = scan4.nextInt();
+        int data2 = scan4.nextInt();
+        int data3 = scan4.nextInt();
+
+        if(data1 > data2){int temp = data1; data1 = data2; data2 = temp;}
+        if(data1 > data3){int temp = data1; data1 = data3; data3 = temp;}
+        if(data2 > data3){int temp = data2; data2 = data3; data3 = temp;}
+        System.out.printf("%d, %d, %d" , data1, data2, data3);
     }
 }
