@@ -207,6 +207,8 @@ Scanner로 메뉴 번호를 입력받습니다.
             System.out.println("프로그램 종료");
             break;
         }
+        else{
+            System.out.println(" 1 ~ 4 까지만 입력 ");}
     }
 
 
