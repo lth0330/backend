@@ -30,6 +30,6 @@ public class Exam1 {
 
         // while
 
-12
+
     }
 }
