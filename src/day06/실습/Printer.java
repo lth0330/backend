@@ -7,6 +7,27 @@ public class Printer {
     }
 }
 
+class Checker {
+    boolean isEven(int x){
+        if(x%2 ==0){
+            return true;
+        }else {return false;}
+    }
+}
+
+class Greeter {
+
+    void greet(String s){
+        System.out.println("안녕하세요"+s+"님!");
+    }
+}
+
+class SimpleCalculator {
+    int add(int x, int y){
+        return x+y;
+    }
+}
+
 class Lamp {
 
     boolean turnOn() {
