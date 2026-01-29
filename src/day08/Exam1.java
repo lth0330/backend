@@ -1,0 +1,40 @@
+package day08;
+
+import java.util.ArrayList;
+
+public class Exam1 {
+    public static void main(String[] args) {
+
+        // [1] ArrayList 클래스 : 켈랙션(수집) 프레임(틀) 워크(일) , 수집관련 클래스/기능 제공
+        // [2] 정의 : 컬렉션프레임워크 중 리스트(베열) 자료형 클래스/타입
+        // [3] 목적 : 가변(변하는 요소들의 수)길이의 배열 제공과 기능/매소드 제공
+        // [4]
+            //1. 선언/정의하기 : ArrayList<항목타입> 변수명 = new ArrayList()<>
+            // -> <> 괄호는 제네릭 타입으로 리스트 안에 저장할 항목들의 타입
+            // -> 제너릭타입은 기본타입이 불가능해서 int -> Integer클래스명으로 변경해서 작성
+        ArrayList<String> 리스트변수명 = new ArrayList<>();   //여러개 String 객체를 저장하는 리스트
+        // VS String [] 변수명 = new String[100];
+            // 2. 요소 추가 : .add(새로운값);,  마지막 요소에 자료 추가
+        리스트변수명.add("유재석");
+            // 3. 요소들 출력 :
+        System.out.println(리스트변수명);
+        리스트변수명.add("강호동");
+        리스트변수명.add("이태형");
+        System.out.println(리스트변수명);
+            // 4. 요소 중간 삽입 : add(인덱스, 새로운값) : 특정한 인덱스에 자료추가
+        리스트변수명.add(1,"서장훈");  //
+        System.out.println("리스트변수명 = " + 리스트변수명); // soutv 가까운 변수 출력 자동완성
+            // 5. 요소 수정 : .set(인덱스,새로운값) : 특정한 인덱스 자료 수정
+        리스트변수명.set(1, "박명수");
+        System.out.println("리스트변수명 = " + 리스트변수명);
+            // 6. 요소 총개수 : .size() : 리스트내 항목/요소/값들의 총개수 반환(리스트) vs length(배열)
+        System.out.println(리스트변수명.size()); //4
+            // 7. 요소값 반환 호출 : .get(인덱스) : 특정한 인덱스의 요소값 반환
+        System.out.println(리스트변수명.get(0));  // 유재석
+        System.out.println(리스트변수명.get(2)); // 강호동
+            // 8. 요소 삭제 : .remove(인덱스) : 특정한 인덱스의 요소 삭제
+        리스트변수명.remove(1);
+        System.out.println("리스트변수명 = " + 리스트변수명);
+
+    }
+}
