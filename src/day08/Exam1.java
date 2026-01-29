@@ -35,6 +35,28 @@ public class Exam1 {
             // 8. 요소 삭제 : .remove(인덱스) : 특정한 인덱스의 요소 삭제
         리스트변수명.remove(1);
         System.out.println("리스트변수명 = " + 리스트변수명);
+            // 9. 요소 찾기 : .indexOf(찾을값) : 찾을값이 존재하면 인덱스 반환, 없으면 -1
+        int 찾은결과 = 리스트변수명.indexOf("유재석");
+        System.out.println("찾은결과 = " + 찾은결과);
+            // 10. 요소 찾기2 : .contains(찾을값) : 찾을값이 존재하면 true, 없으면 false;
+        boolean 찾을결과2 = 리스트변수명.contains("이태형");
+        System.out.println("찾을결과2 = " + 찾을결과2);
+        // 5. 반복문과 리스트 활용
+            // 1. 일반 for문
+        for (int index =0; index<=리스트변수명.size()-1; index++){
+            System.out.println("리스트변수명.get(index)" +리스트변수명.get(index));
+        }
+            // 2. 향상된 for문
+        for (String str : 리스트변수명){
+            System.out.println(str);
+        }
+
+        // 11. 요소 전체 삭제 : .clear()
+        리스트변수명.clear();
+        //  12. 요소 존재 여부 : .isEmpty(): 리시트내 요소가 하나도 없으면 true 있으면 false
+        boolean 여부 = 리스트변수명.isEmpty();  // 바로 전에 .clear()를 했으므로 true가 나온다
+        System.out.println("여부 = " + 여부);
+        System.out.println(리스트변수명);
 
     }
 }
