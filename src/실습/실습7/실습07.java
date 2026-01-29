@@ -1,8 +1,6 @@
-package day05;
+package 실습.실습7;
 
-import java.awt.*;
-
-public class 실습7 {
+public class 실습07 {
     public static void main(String[] args) {
 
 

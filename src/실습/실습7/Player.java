@@ -1,4 +1,4 @@
-package day05;
+package 실습.실습7;
 
 public class Player {
 

@@ -1,8 +1,6 @@
-package day06.실습;
+package 실습.실습8;
 
-import javax.swing.plaf.ViewportUI;
-
-public class 실습7 {
+public class 실습08 {
     public static void main(String[] args) {
 
         /*[실습] * 제출용 */

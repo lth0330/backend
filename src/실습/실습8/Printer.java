@@ -1,4 +1,4 @@
-package day06.실습;
+package 실습.실습8;
 
 public class Printer {
 
