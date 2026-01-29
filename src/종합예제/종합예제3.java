@@ -1,8 +1,8 @@
-package day05;
+package 종합예제;
 
 import java.util.Scanner;
 
-public class 에제3 {
+public class 종합예제3 {
     public static void main(String[] args) {
 
         // [1] Board 클래스 선언

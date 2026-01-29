@@ -1,4 +1,4 @@
-package day05;
+package 종합예제;
 
 public class 종합예제2 {
     public static void main(String[] args) {

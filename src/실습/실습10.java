@@ -1,4 +1,4 @@
-package day07;
+package 실습;
 
 public class 실습10 {
     public static void main(String[] args) {

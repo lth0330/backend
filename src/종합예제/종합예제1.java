@@ -1,8 +1,8 @@
-package day04;
+package 종합예제;
 
 import java.util.Scanner;
 
-public class 종합실습1 {
+public class 종합예제1 {
 
     public static void main(String[] args) {
 
