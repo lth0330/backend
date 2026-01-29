@@ -48,3 +48,8 @@ public class 종합예제3 {
         }
     }
 }
+class Board {
+
+    String 내용;
+    String 작성자;
+}
