@@ -17,7 +17,7 @@ public class Exam2 {
 
         // [4] 자식 객체가 생성되면 부모 객체도 같이 생성된다.
         System.out.println("===4===");
-        D d = new D(); // 총 객에 4개
+        D d = new D(); // 총 객체 4개
 
         // [5] 자동타입변환
         A a2 = b;
