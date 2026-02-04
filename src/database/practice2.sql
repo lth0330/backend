@@ -1,5 +1,8 @@
 /*[실습] 제출용 */
 
+drop database if exists practice2; -- 존재하면 삭제 
+create database practice2; -- 데이터베이스 생성
+use practice2; -- 데이터베이스 사용/활성화
 -- 아래 문제는 'practice2' 데이터베이스 생성 후 진행 합니다.
 -- [문제 1]아래 조건에 맞는 members 테이블을 생성하는 SQL을 작성하세요.
 -- 테이블명: members
@@ -11,7 +14,8 @@
 -- is_active (활성여부): 논리형(bool), Default true
 create database practice2;
 create table members(
-	member_id tinyint primary key auto_increment,
+	member_id tinyint auto_increment,
+    constraint primary key(member_id),
     member_name char(50) not null,
     email char(100) unique not null,
     join_data datetime default now(),
@@ -52,7 +56,7 @@ create table orders(
 	order_id bigint auto_increment,
     constraint primary key(order_id),
     member_id int,
-	constraint foreign key(member_id) references members(member_id) on update restrict,
+	constraint foreign key(member_id) references members(member_id) on delete cascade on update cascade,
     order_data datetime default now(),
     total_price int unsigned not null
 );
@@ -77,6 +81,7 @@ create table order_items(
     quantity int default 1,
     price int unsigned not null
 );
+select * from order_items;
 
 -- [문제 5]
 -- 아래 조건에 맞는 students 테이블을 생성하는 SQL을 작성하세요.
@@ -89,9 +94,14 @@ create table order_items(
 -- enrolled_date (입학일): date
 
 create table students(
-student_id char(10)
+student_id char(10),
+constraint primary key(stduent_id),
+student_name varchar(30) not null,
+major varchar(50),
+grade tinyint unsigned,
+enrolled_data date
 );
-
+select * from students;
 
 -- [문제 6]
 -- 아래 조건에 맞는 employees 테이블을 생성하는 SQL을 작성하세요.
@@ -102,6 +112,12 @@ student_id char(10)
 -- salary (급여): int unsigned, NULL 허용 안함
 -- hire_date (입사일): date, NULL 허용 안함
 -- department (부서): varchar(50)
+
+	create table employees(
+    
+    );
+    
+
 
 -- [문제 7]
 -- 아래 조건에 맞는 boards 테이블을 생성하는 SQL을 작성하세요.
