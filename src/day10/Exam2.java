@@ -35,6 +35,9 @@ public class Exam2 {
             }
         };
 
+        myKeyBoard.aKey();
+        myKeyBoard.bKey(3,2);
+
 
 
 
