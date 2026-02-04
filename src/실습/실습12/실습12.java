@@ -56,7 +56,8 @@ public class 실습12 {
         System.out.println("6번 ---------------------");
         Vehicle vehicle = new Bus();
         if( vehicle instanceof Bus == true){
-
+            Bus bus = (Bus) vehicle;
+            bus.checkFare();
         }
 /*[문제 7] 다형성을 활용한 객체 배열
 1. "음료를 마십니다."를 출력하는 drink() 메소드를 가진 Beverage 클래스를 만드세요.
@@ -64,6 +65,19 @@ public class 실습12 {
 다.", "커피를 마십니다."를 출력하도록 하세요.
 3. main 함수에서 Beverage 타입의 배열을 생성하고, 그 안에 Coke 객체와 Coffee 객체를 저장하세요.
 4. 반복문을 사용하여 배열의 모든 요소를 꺼내 drink() 메소드를 호출하고, 각기 다른 결과가 출력되는 것을 확인하세요.*/
+
+        System.out.println("7번 ---------------------");
+        Coke coke = new Coke();
+        Coffee coffee = new Coffee();
+        Beverage [] beverage = new Beverage[2];
+        beverage[0] = coke;
+        beverage[1] = coffee;
+        for(int i = 0; i<=beverage.length-1; i++){
+            beverage[i].drink();
+        }
+
+
+
 
 
 /*[문제 8] 다형성을 활용한 매개변수
@@ -199,6 +213,23 @@ class Bus extends Vehicle{
 3. main 함수에서 Beverage 타입의 배열을 생성하고, 그 안에 Coke 객체와 Coffee 객체를 저장하세요.
 4. 반복문을 사용하여 배열의 모든 요소를 꺼내 drink() 메소드를 호출하고, 각기 다른 결과가 출력되는 것을 확인하세요.*/
 
+class Beverage{
+    void drink(){
+        System.out.println("음료를 마십니다.");
+    }
+}
+
+class Coke extends Beverage{
+    void drink(){
+        System.out.println("콜라를 마십니다.");
+    }
+}
+
+class Coffee extends Beverage{
+    void drink(){
+        System.out.println("커피를 마십니다.");
+    }
+}
 
 /*[문제 8] 다형성을 활용한 매개변수
 1. Weapon 클래스와 이를 상속받는 Sword, Gun 클래스를 만드세요. 각 클래스는 "무기로 공격합니다.", "검으로 공격합니다.",
