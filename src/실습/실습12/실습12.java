@@ -34,8 +34,8 @@ public class 실습12 {
 명하세요.*/
 
         System.out.println("4번------------------");
-        Triangle triangle = new Triangle();
-        // ????
+        Figure figure = new Triangle();
+        // Triangle이 Figure을 상속해서
 /*[문제 5] 다형성과 오버라이딩
 1."도형을 그립니다."를 출력하는 draw() 메소드를 가진 Shape 클래스를 만드세요.
 2.Shape을 상속받고, draw() 메소드를 재정의하여 "원을 그립니다."를 출력하는 Circle 클래스를 만드세요.
@@ -76,10 +76,6 @@ public class 실습12 {
             beverage[i].drink();
         }
 
-
-
-
-
 /*[문제 8] 다형성을 활용한 매개변수
 1. Weapon 클래스와 이를 상속받는 Sword, Gun 클래스를 만드세요. 각 클래스는 "무기로 공격합니다.", "검으로 공격합니다.",
 "총으로 공격합니다."를 출력하는 attack() 메소드를 가집니다. (오버라이딩 활용)
@@ -108,8 +104,6 @@ public class 실습12 {
         System.out.println(obj.name);
         obj.method();
 
-
-
 /*[문제 10] 다중 상속 관계
 1. Device 클래스를 만드세요.
 2. Device를 상속받는 Electronic 클래스를 만드세요.
@@ -117,8 +111,10 @@ public class 실습12 {
 4. main 함수에서 Laptop 객체를 생성한 뒤, 이 객체가 Electronic 타입과 Device 타입으로도 형 변환이 가능한지 instanceof
 연산자로 확인하고 결과를 출력하세요.*/
 
-
-
+        System.out.println("10번 ---------------------");
+        Laptop laptop = new Laptop();
+        System.out.println(laptop instanceof Electronic);
+        System.out.println(laptop instanceof Device);
     }
 }
 /*  1. name(문자열) 멤버 변수를 가진 Person 클래스를 만드세요.
@@ -301,5 +297,14 @@ class Sub extends Super{
 4. main 함수에서 Laptop 객체를 생성한 뒤, 이 객체가 Electronic 타입과 Device 타입으로도 형 변환이 가능한지 instanceof
 연산자로 확인하고 결과를 출력하세요.*/
 
+class Device{
 
+}
+
+class Electronic extends Device{
+
+}
+class Laptop extends Electronic{
+
+}
 
