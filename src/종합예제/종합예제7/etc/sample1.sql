@@ -4,22 +4,21 @@ create database boardservice7;
 use boardservice7;
 #[2] 테이블 생성 
 create table board(
-	bno int auto_increment , 
-	constraint primary key( bno ),
+        bno int auto_increment , 
+        constraint primary key( bno ),
     bcontent longtext not null , 
     bwriter varchar(30) not null ,
     bdate datetime default now()
 );
- 
-#[3] 테이블 샘플데이터
-
-insert into board (bcontent, bwriter)
-values ('첫 번째 게시글입니다. 게시판 테스트용 내용입니다.', '홍길동');
-insert into board (bcontent, bwriter)
-values ('두 번째 게시글입니다. MySQL 연습 중입니다.', '김철수');
-insert into board (bcontent, bwriter)
-values ('세 번째 게시글입니다. longtext 타입 테스트를 위한 내용입니다.', '이영희');
-insert into board (bcontent, bwriter)
-values ('네 번째 게시글입니다. 날짜는 자동으로 들어갑니다.', '관리자');
-
-#
+#[3] 테이블 샘플 데이터 10개 ( AI 활용 ) 
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 1입니다.', '김철수');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 2입니다.', '이영희');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 3입니다.', '박민수');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 4입니다.', '최유진');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 5입니다.', '정지훈');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 6입니다.', '강호동');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 7입니다.', '유재석');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 8입니다.', '신동엽');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 9입니다.', '송중기');
+INSERT INTO board (bcontent, bwriter) VALUES ('게시글 내용 10입니다.', '전지현');
+select * from board;
