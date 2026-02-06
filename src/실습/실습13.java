@@ -21,8 +21,13 @@ public class 실습13 {
         runner = new Car();  runner.run();
 
         System.out.println("==============문제 4번===============");
+        Sward sward = new Sward();
+        Gun gun = new Gun();
+        Character character =new Character();
+        character.useWeapon(sward);
+        character.useWeapon(gun);
 
-
+        System.out.println("==============문제 5번===============");
 
 
 
@@ -79,8 +84,19 @@ class Gun implements Attackable{
         System.out.println("총으로 공격");
     }
 }
+class Character{
 
+    public void useWeapon(Attackable weapon){
+        weapon.attack();
+    }
+}
 
+//---------------------[문제 5] 다중 인터페이스 구현----------------------
+interface Flyable{
+    public abstract void fly();
 
-
+}
+interface Swimmable{
+    public abstract void swimmable();
+}
 
