@@ -20,9 +20,9 @@ public class BoardView {
                 System.out.println("============My Community==============");
                 System.out.println("1. 게시물 쓰기 |  2. 게시물 출력");
                 System.out.println("======================================");
-                System.out.println("선택>");
+                System.out.print("선택>");
                 int ch = scan.nextInt();
-                if (ch == 1) {
+                if (ch == 1) { wirte();
                 } else if (ch == 2) {
                 } else if (ch == 3) {
                 } else if (ch == 4) {
