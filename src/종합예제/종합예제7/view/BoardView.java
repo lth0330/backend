@@ -60,7 +60,6 @@ public class BoardView {
             System.out.printf("번호 : %d, 작성일 : %s, 작성자 : %s, 내용 : %s\n"
                                 ,board.getBno(), board.getBdate(), board.getBwriter(),board.getBcontent() );
         }
-
     }
 
     // [3] 게시물 수정 view
