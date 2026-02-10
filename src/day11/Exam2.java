@@ -1,4 +1,4 @@
-package Day11;
+package day11;
 
 public class Exam2 {
     // 메소드1, thorws : 해당 메소드에서 예외 발생시 메소드호출 했던 곳으로 예외 전달
