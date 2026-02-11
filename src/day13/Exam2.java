@@ -75,6 +75,26 @@ public class Exam2 {
         System.out.println("html = " + html);
         System.out.println(html.replaceAll("<br/>", "\n")); // html 줄바꿈을 자바의 줄바꿈으로 치환
 
+        // 9) .substring(시작, [끝])
+        String str15 = "123456-4564".substring(0,6);
+        System.out.println("str15 = " + str15);  // 123456
+        
+        // 10. split("구분문자") , 구문문자 기분으로 잘라서 배열로 반환
+        String[] str16 = "0123456-65645".split("-");
+        System.out.println("str16[0] = " + str16[0]);  // '-'을 기준으로 첫번째
+        System.out.println("str16[1] = " + str16[1]);   // '-' 기준으로 다음꺼
+        
+        // 11. .indexOf("찾을 문자"), 찾을 문자가 존재하면 찾은 인덱스 번호, 존재하지 않으면 -1 반환,   활용처 : 검색, 치환
+        // 12. contains("찾을 문자"), 찾을 문자가 존재하면 true, 존재하지 않으면 false,   활용처 : 검색, 치환
+        System.out.println("자바 프로그래밍 언어".indexOf("프로"));  // 0 1 2 3 순서로 3이 나옴
+        System.out.println("자바 프로그래밍 언어".contains("프로"));  //true
+
+        // 13. .getBytes() , 문자열을 byte 배열[]로 반환/추출
+        // new String(문자열바이트). byte 배열  ---> 문자열 타입
+        byte[] str17 = "AaBbCc".getBytes();
+        System.out.println(Arrays.toString(str17));
+        String str18 = new String(str17);
+        System.out.println("str18 = " + str18);
 
     }
 }
