@@ -12,12 +12,12 @@ use practice2; -- 데이터베이스 사용/활성화
 -- email (이메일): 문자열(100), Unique, NULL 허용 안함
 -- join_date (가입일): 날짜/시간, Default 현재 날짜/시간
 -- is_active (활성여부): 논리형(bool), Default true
-create database practice2;
+
 create table members(
-	member_id tinyint auto_increment,
+	member_id int auto_increment,
     constraint primary key(member_id),
-    member_name char(50) not null,
-    email char(100) unique not null,
+    member_name varchar(50) not null,
+    email varchar(100) unique not null,
     join_data datetime default now(),
     is_active bool default true
 );
@@ -33,16 +33,16 @@ select * from members;
 -- stock (재고수량): 정수, Default 0, NULL 허용 안함
 -- created_at (등록일): 날짜/시간, Default 현재 날짜/시간
 
-
 create table products(
-	prduct_id int auto_increment,
+	product_id int auto_increment,
     constraint primary key(product_id),
-	product_name char(100) not null,
+	product_name varchar(100) not null,
     price int unsigned not null,
     stock int default 0 not null,
     created_at datetime default now()
 );
 select * from products;
+
 -- [문제 3]
 -- 아래 조건에 맞는 orders 테이블을 생성하는 SQL을 작성하세요.
 -- 테이블명: orders
@@ -73,7 +73,8 @@ select * from orders;
 -- price (단가): int unsigned, NULL 허용 안함
 
 create table order_items(
-	item_id int primary key auto_increment,
+	item_id int auto_increment,
+    constraint primary key(item_id),
     order_id bigint,
     constraint foreign key(order_id) references orders(order_id) on update restrict,
 	product_id int,
@@ -95,7 +96,7 @@ select * from order_items;
 
 create table students(
 student_id char(10),
-constraint primary key(stduent_id),
+constraint primary key(student_id),
 student_name varchar(30) not null,
 major varchar(50),
 grade tinyint unsigned,
@@ -114,8 +115,13 @@ select * from students;
 -- department (부서): varchar(50)
 
 	create table employees(
-    
+    emp_id int auto_increment,
+    constraint primary key(emp_id),
+    salary int unsigned not null,
+    hire_date date not null,
+    department varchar(50)
     );
+    select * from employees;
     
 
 
@@ -129,6 +135,17 @@ select * from students;
 -- writer_id (작성자회원번호): int, Foreign Key → members(member_id)
 -- created_at (작성일): datetime, Default 현재 날짜/시간
 
+create table boards(
+	board_id int auto_increment,
+    constraint primary key(board_id),
+    title varchar(200) not null,
+    writer_id int, 
+    constraint foreign key(writer_id)references members(member_id),
+    created_at datetime default now()
+);
+select * from boards;
+
+
 -- [문제 8]
 -- 아래 조건에 맞는 comments 테이블을 생성하는 SQL을 작성하세요.
 -- 테이블명: comments
@@ -139,6 +156,15 @@ select * from students;
 -- content (댓글내용): varchar(300), NULL 허용 안함
 -- created_at (작성일): datetime, Default 현재 날짜/시간
 
+create table comments(
+	comment_id int auto_increment,
+    constraint primary key(comment_id),
+    board_id int,
+    constraint foreign key(board_id)references members(member_id),
+    content varchar(300) not null,
+    created_at datetime default now()
+);
+select * from comments;
 -- [문제 9]
 -- 아래 조건에 맞는 payments 테이블을 생성하는 SQL을 작성하세요.
 -- 테이블명: payments
@@ -148,6 +174,17 @@ select * from students;
 -- payment_amount (결제금액): int unsigned, NULL 허용 안함
 -- payment_method (결제수단): varchar(30)
 -- payment_date (결제일): datetime, Default 현재 날짜/시간
+
+create table payments (
+	payment_id bigint auto_increment,
+    constraint primary key(payment_id),
+    order_id bigint,
+    constraint foreign key(order_id) references orders(order_id),
+    payment_amout int unsigned not null,
+    payment_method varchar(30),
+    payment_date datetime default now()
+);
+select * from payments;
 
 -- [문제 10]
 -- 아래 조건에 맞는 reviews 테이블을 생성하는 SQL을 작성하세요.
@@ -159,3 +196,16 @@ select * from students;
 -- rating (평점): tinyint unsigned, NULL 허용 안함
 -- review_text (리뷰내용): text
 -- created_at (작성일): datetime, Default 현재 날짜/시간
+
+create table reviews(
+	review_id int auto_increment,
+    constraint primary key(review_id),
+    product_id int,
+    constraint foreign key(product_id) references products(product_id),
+    member_id int,
+    constraint foreign key(member_id) references members(member_id),
+    rating tinyint unsigned not null,
+    review_text text,
+    created_at datetime default now()
+);
+select * from reviews;
