@@ -17,7 +17,7 @@ public class Exam2 {
         System.out.println("str3 = " + str3);
         char  [] str4 = {74, 65, 86, 65};
         System.out.println("str4 = " + Arrays.toString(str4));
-        char str5 = '이';
+        char str5 = 65;
         System.out.println("(int)str5 = " + (int)str5);
 
 
