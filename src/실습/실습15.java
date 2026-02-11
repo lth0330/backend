@@ -37,7 +37,7 @@ class java.lang.String | forName 성공 | method count:90
 */
  String str1 = new String();
  Class c1 = str1.getClass();
-
+int m = 0;
         try {
             Class.forName("java.lang.String");
         }catch (ClassNotFoundException e){}
@@ -45,7 +45,9 @@ class java.lang.String | forName 성공 | method count:90
         Method[ ] methods = c1.getMethods(); // 클래스내 모든 메소드 확인
         for( int i = 0 ; i < methods.length ; i++ ){
             System.out.println( methods[i] );
+            m++;
         }
+        System.out.println(m);
 
 /*[문제 4] 문자열 "100"과 "3.14"를 각각 기본타입으로 변환하고 기본타입을 문자열로 변환하는 방법을 포함하여 출력하시오.
 [출력예시]
@@ -75,4 +77,8 @@ int:100, double:3.14, str1:"100", str2:"100"
 
 class BookDto{}
 class BoardBto{
+    @Override
+    public String toString() {
+        return "BoardBto{}";
+    }
 }
