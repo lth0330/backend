@@ -189,12 +189,31 @@ city=서울
         System.out.println("문제 7번");
         String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
         Map<String, String> map7 = new HashMap<>();
+        json =json.replace("{","");
+        json = json.replace("}","");
+        System.out.println(json);
+
+        String [] jsonAry = json.split(",");
+        System.out.println(Arrays.toString(jsonAry));
+        for (int index=0; index<= jsonAry.length-1;index++){
+            System.out.println(jsonAry[index]);
+            String str = jsonAry[index];
+            String [] strAry = str.split(":");
+
+            map7.put(strAry[0].replace("\"",""),strAry[1]);
+
+        }
+
+        System.out.println(map7);
+
+        map7.keySet().forEach((key) ->{
+            System.out.println(key+"="+ map7.get(key));
+        });
 
 /*-------------------------------------------
 
 [문제 8] ArrayList<StockDto> → ArrayList<Map<String,Object>> 구조로 구현
 상황: 기존에는 StockDto 클래스를 만들어 주식 데이터를 저장했지만, 이번에는 DTO 없이 Map 구조로 데이터를 관리한다.
-
 
 기존 DTO 개념 (참고):
 class StockDto {
@@ -202,7 +221,6 @@ class StockDto {
     int price;
     int volume;
 }
-
 변경 목표: ArrayList<Map<String,Object>> 구조로 동일 데이터 표현
 
 요구사항(구현):
@@ -213,17 +231,14 @@ class StockDto {
    name = "삼성전자"
    price = 72000
    volume = 1500000
-
    (2)
    name = "카카오"
    price = 52000
    volume = 800000
-
    (3)
    name = "네이버"
    price = 210000
    volume = 300000
-
 
 3) 전체 리스트 출력
 4) 반복문을 사용하여 아래 형식으로 출력:
@@ -233,13 +248,34 @@ class StockDto {
    종목명: 네이버 / 가격: 210000 / 거래량: 300000
 
 출력 예시:
-
 [stockList] [{...},{...},{...}]
 종목명: 삼성전자 / 가격: 72000 / 거래량: 1500000
 종목명: 카카오 / 가격: 52000 / 거래량: 800000
 종목명: 네이버 / 가격: 210000 / 거래량: 300000
 
 -------------------------------------------*/
+        ArrayList<Map<String,Object>> stockList = new ArrayList<>();
+        Map< String, Object> map8 = new HashMap<>();
+        map8.put("name","삼성전자");
+        map8.put("price",160000);
+        map8.put("volume",1500000);
+        stockList.add(map8);
+
+        Map< String, Object> map88 = new HashMap<>();
+        map88.put("name","카카오");
+        map88.put("price",52000);
+        map88.put("volume",800000);
+        stockList.add(map88);
+
+        Map< String, Object> map888 = new HashMap<>();
+        map888.put("name","네이버");
+        map888.put("price",210000);
+        map888.put("volume",300000);
+        stockList.add(map888);
+        System.out.println(stockList);
+        stockList.forEach((stock)->{
+            System.out.printf("종족명 : %s / 가격 : %s / 거래량 : %s\n",stock.get("name"),stock.get("price"),stock.get("volume"));
+        });
     }
 }
 class  Box<T>{T content;}
