@@ -1,5 +1,7 @@
 package 실습;
 
+import java.util.*;
+
 public class 실습17 {
     public static void main(String[] args) {
 
@@ -16,12 +18,13 @@ public class 실습17 {
 [문자] 안녕하세요
 [숫자] 100
 -------------------------------------------*/
+        System.out.println("문제 1번");
     Box<String> box = new Box<String>();
     String Strbox = box.content = "안녕하세요";
         System.out.println("Strbox = " + Strbox);
     Box<Integer> box1 = new Box<Integer>();
     int intbox = box1.content = 100;
-        System.out.println("intbox = " + intbox); 
+        System.out.println("intbox = " + intbox);
 /*-------------------------------------------
 [문제 2] List 검색 + 삭제 (contains / indexOf / remove)
 상황: 명단 리스트에서 특정 이름이 존재하는지 확인하고, 위치를 찾아 삭제한 뒤 결과를 확인한다.
@@ -40,11 +43,19 @@ public class 실습17 {
 [index] 2
 
 [삭제후] [유재석, 강호동, 신동엽, 유재석]
-
 -------------------------------------------*/
-
+        System.out.println("문제 2번");
+        List<String> list = new ArrayList<>();
+        list.add("유재석");
+        list.add("강호동");
+        list.add("서장훈");
+        list.add("신동엽");
+        list.add("유재석");
+        System.out.println(list.contains("서장훈"));
+        System.out.println(list.indexOf("서장훈"));
+        list.remove("서장훈");
+        System.out.println(list);
 /*-------------------------------------------
-
 [문제 3] 추첨번호 생성: 중복 제거 Set (HashSet)
 상황: 1~10 사이 번호를 15번 뽑았더니 중복이 생겼다. 중복을 제거하고 최종 번호 목록을 확인해야 한다.
 고정 데이터: int[] draw = {1,3,3,7,9,9,2,10,10,8,4,4,6,6,5};
@@ -60,6 +71,15 @@ public class 실습17 {
 [contains 7] true
 
 -------------------------------------------*/
+        System.out.println("문제 3번");
+        int[] draw = {1,3,3,7,9,9,2,10,10,8,4,4,6,6,5};
+        Set<Integer> lottoSet = new HashSet<>();
+        for (int i =0; i<=draw.length-1;i++){
+            lottoSet.add(draw[i]);
+        }
+        System.out.println(lottoSet);
+        System.out.println(lottoSet.size());
+        System.out.println(lottoSet.contains(7));
 
 /*-------------------------------------------
 
@@ -75,7 +95,12 @@ public class 실습17 {
 [정렬된 추첨번호] [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 -------------------------------------------*/
-
+        System.out.println("문제 4번");
+        TreeSet<Integer> treeSet= new TreeSet<>();
+        for (int i =0; i<=draw.length-1;i++){
+            treeSet.add(draw[i]);
+        }
+        System.out.println(treeSet);
 /*-------------------------------------------
 
 [문제 5] Map 점수 관리 CRUD (put/get/remove/size)
@@ -93,7 +118,17 @@ public class 실습17 {
 [remove 후 map] {서장훈=100, 강호동=100, 신동엽=78}
 
 -------------------------------------------*/
-
+        System.out.println("문제 5번");
+        Map<String , Integer> map = new HashMap<>();
+        map.put("유재석",95);
+        map.put("강호동",100);
+        map.put("신동엽",78);
+        map.put("유재석",67);
+        map.put("서장훈",100);
+        System.out.println(map.get("유재석"));
+        System.out.println(map.size());
+        map.remove("유재석");
+        System.out.println(map);
 /*-------------------------------------------
 
 [문제 6] Map 검색 + 전체 출력 (containsKey/containsValue + keySet 반복)
@@ -114,12 +149,18 @@ public class 실습17 {
 신동엽=78
 
 -------------------------------------------*/
+        System.out.println("문제6번");
+        System.out.println(map.containsKey("강호동"));
+        System.out.println(map.containsValue(65));
+
+        map.keySet().forEach((key) ->{
+            System.out.println(key+"="+map.get(key));
+        });
 
 /*-------------------------------------------
 
 [문제 7] JSON 문자열(단순) → Map 변환 + 조회/반복 출력
 상황: API에서 온 JSON 문자열을 파싱해서 Map으로 저장하고 사용해야 한다.
-
 입력 JSON (고정):
 String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
 
@@ -144,8 +185,10 @@ String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
 name=유재석
 age=45
 city=서울
-
 -------------------------------------------*/
+        System.out.println("문제 7번");
+        String json = "{\"name\":\"유재석\",\"age\":45,\"city\":\"서울\"}";
+        Map<String, String> map7 = new HashMap<>();
 
 /*-------------------------------------------
 
